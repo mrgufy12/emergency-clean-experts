@@ -15,7 +15,7 @@ type DemoStep = {
  * Clip lengths are one bar (60 frames) so every cut lands on a beat.
  */
 const steps: DemoStep[] = [
-  {label: "FOOTAGE 01", color: "#0c3f3c", enter: "cut", text: "ON SITE"},
+  {label: "FOOTAGE 01", color: "#0c3f3c", enter: "cut", text: "ON SITE", highlightWord: "SITE"},
   {label: "FOOTAGE 02", color: "#1b5c48", enter: "glitch", text: "PREP TIME", highlightWord: "TIME"},
   {label: "FOOTAGE 03", color: "#0f4f73", enter: "hard", text: "FIRST CLEAN", highlightWord: "CLEAN"},
   {label: "FOOTAGE 04", color: "#14685a", enter: "glitch", text: "POWER WASH", highlightWord: "WASH"},

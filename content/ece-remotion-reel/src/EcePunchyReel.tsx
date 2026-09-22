@@ -26,6 +26,15 @@ export const EcePunchyReel: React.FC<EcePunchyReelProps> = ({
     <AbsoluteFill style={{backgroundColor: "#000"}}>
       <Audio src={resolveMediaSrc(bed)} volume={bedVolume} loop />
       <BeatTimeline clips={normalized} sourceVolume={cameraVolume} />
+      {showBrandClose ? (
+        <Sequence
+          from={Math.max(0, durationInFrames - brandFrames)}
+          durationInFrames={brandFrames}
+          name="Brand close"
+        >
+          <BrandClose />
+        </Sequence>
+      ) : null}
       {captions.map((caption, index) => (
         <Sequence
           key={`caption-${index}`}
@@ -40,15 +49,6 @@ export const EcePunchyReel: React.FC<EcePunchyReelProps> = ({
           />
         </Sequence>
       ))}
-      {showBrandClose ? (
-        <Sequence
-          from={Math.max(0, durationInFrames - brandFrames)}
-          durationInFrames={brandFrames}
-          name="Brand close"
-        >
-          <BrandClose />
-        </Sequence>
-      ) : null}
     </AbsoluteFill>
   );
 };
